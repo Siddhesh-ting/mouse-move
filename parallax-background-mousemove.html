@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Parallax Background Mouse Move</title>
+
+    <!-- Bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+    <style>
+      .bg-space{
+        background: url(img/bg-space.jpg) no-repeat;
+        background-size: cover;
+        height: 100vh;
+        overflow: hidden;
+        background-attachment: fixed;
+      }
+
+      .scene{
+        position: relative;
+      }
+
+      /* .full-moon{
+        position: absolute;
+        right: 40%;
+        top: 50%;
+        transform: translateY(50%);
+      }
+      .spaceship{
+        position: absolute;
+        transform: translate(200%,100%);
+      }
+      .astronaut{
+        position: absolute;
+        transform: translate(225%,150%);
+      } */
+      .full-moon{
+        position: relative;
+        transform: translate(400%,50%) rotate(2deg);
+      }
+
+      .spaceship{
+        position: relative;
+        transform: translate(1102%,150%) rotate(-50deg);
+      }
+
+      .astronaut{
+        position: relative;
+        transform: translate(225%,150%);
+      }
+    </style>
+    
+
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    
+    <section class="bg-space">
+        <ul id="move" class="move">
+           <li class="layer" data-depth-x="0.10" data-depth-y="-0.30"><img src="img/full-moon.png" class="full-moon" alt=""></li>
+           <li class="layer" data-depth-x="-0.20" data-depth-y="-0.60"><img src="img/spaceship.png" class="spaceship" alt=""></li>
+           <li class="layer" data-depth-x="-0.30" data-depth-y="-0.80"><img src="img/Astronaut.png" class="astronaut" alt=""></li>
+        </ul>
+    </section>
+
+    
+
+    
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/parallax.min.js"></script>
+    
+   <script>
+      var scene = document.getElementById('move');
+      var parallax = new Parallax(move);
+   </script>
+    
+  </body>
+</html>
